@@ -1,0 +1,83 @@
+<style>
+    html {
+        background-color: black;
+    }
+
+    .loader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        position: relative;
+        top: 100px;
+    }
+
+    .slider {
+        overflow: hidden;
+        background-color: white;
+        margin: 0 15px;
+        height: 80px;
+        width: 20px;
+        border-radius: 30px;
+        position: relative;
+    }
+
+    .slider::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        border-radius: 100%;
+        box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.3), 0px 420px 0 400px #2697f4,
+            inset 0px 0px 0px rgba(0, 0, 0, 0.1);
+        animation: animate_2 2.5s ease-in-out infinite;
+        animation-delay: calc(-0.5s * var(--i));
+    }
+
+    @keyframes animate_2 {
+        0% {
+            transform: translateY(250px);
+            filter: hue-rotate(0deg);
+        }
+
+        50% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(250px);
+            filter: hue-rotate(180deg);
+        }
+    }
+
+.text-container {
+    text-align: center;
+    margin-top: 150px;
+    width: fit-content;
+    margin-left: auto;  
+    margin-right: auto;
+}
+.text-container p {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+}
+</style>
+<section class="loader">
+
+    <div class="slider" style="--i:0">
+    </div>
+    <div class="slider" style="--i:1">
+    </div>
+    <div class="slider" style="--i:2">
+    </div>
+    <div class="slider" style="--i:3">
+    </div>
+    <div class="slider" style="--i:4">
+    </div>
+</section>
+<div class="text-container">
+    <p>final exam is Loading...</p>
+</div>
